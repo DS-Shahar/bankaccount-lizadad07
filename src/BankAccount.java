@@ -2,16 +2,24 @@
 public class BankAccount {
 	private int minBalance;
     private int balance;
+    private String owner; 
     
     
     
-    public BankAccount(int balance, int minBalance) {
+    public BankAccount(int balance, int minBalance, String owner) {
         this.balance = balance;
         this.minBalance = minBalance;
+        this.owner = owner;
     }
     
     public int getBalance() {
     	return this.balance;
+    }
+    public int getMinBalance() {
+    	return this.minBalance;
+    }
+    public String getOwner() {
+    	return this.owner;
     }
 
 	public boolean withdraw(int amount) {
@@ -33,5 +41,9 @@ public class BankAccount {
         target.deposit(amount);
 	  return true;
     }
+	public String toString() {
+        return "Balance of " + owner + ": " + this.balance + " minBalance: " + this.minBalance ;
+    }
+
 
 }
